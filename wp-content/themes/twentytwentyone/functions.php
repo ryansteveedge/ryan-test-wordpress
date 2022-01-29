@@ -737,10 +737,16 @@ function register_service_tax() {
 }
 add_action( 'init', 'register_service_tax' );
 
-// >> Create Shortcode to Display Movies Post Types
+// Create Shortcode
   
 function service_shortcode($atts){
-  
+	if ($atts == ''){
+		    $args = array(
+                    'post_type'      => 'service',
+                    'posts_per_page' => '-1',
+                    'publish_status' => 'published',
+                 );
+	} else {
     $args = array(
                     'post_type'      => 'service',
                     'posts_per_page' => '-1',
@@ -753,6 +759,9 @@ function service_shortcode($atts){
 								),
 							),
                  );
+	}
+  
+
   
     $query = new WP_Query($args);
   
@@ -778,4 +787,5 @@ function service_shortcode($atts){
 add_shortcode( 'services-list', 'service_shortcode' ); 
   
 // shortcode code ends here
+
 

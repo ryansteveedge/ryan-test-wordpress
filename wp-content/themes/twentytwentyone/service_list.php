@@ -1,14 +1,11 @@
 <?php 
 /* Template Name: Services */
 get_header();
-
-
-	get_template_part( 'template-parts/content/content-page' );
-
+get_template_part( 'template-parts/content/content-page' );
 ?>
 
-
 <div class="smallspace" id="top_ref" style="padding-top:100px;"></div>
+<!-- Service Buttons -->
 <div class="content" style="margin: 0 20px">
    <div class="button-holder">
       <button href="type-a" id="linkclickera">Go to Type A</button>
@@ -16,6 +13,7 @@ get_header();
    </div>
 </div>
 <div class="spacing" style="padding-top:500px;"></div>
+<!-- Service Query -->
 <section class="content" style="margin: 0 20px">
 <?php
    $custom_terms = get_terms('service_type');
@@ -42,6 +40,7 @@ get_header();
    }
 ?>
 </section>
+<!-- back to top button -->
 <div class="backtotop">
    <button id="backtotop">Back to top</button>
 </div>
